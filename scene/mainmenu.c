@@ -30,7 +30,7 @@ struct scene* scene_mainmenu_update(struct scene* _self) {
 
 void scene_mainmenu_render(struct scene* _self) {
     self->context->erase(self->context, self->window);
-    self->context->setchar(self->context, self->window, 0, 0, '#');
+    self->context->print(self->context, self->window, 0, 0, "Hello, World");
     self->context->refresh(self->context, self->window);
 }
 

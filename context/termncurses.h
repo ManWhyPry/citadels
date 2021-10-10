@@ -12,6 +12,7 @@ void*                       context_termncurses_create        (struct context* s
 void                        context_termncurses_destroy       (struct context* self, void* window);
 void                        context_termncurses_erase         (struct context* self, void* window);
 void                        context_termncurses_setchar       (struct context* self, void* window, int x, int y, char ch);
+void                        context_termncurses_print         (struct context* self, void* window, int x, int y, char* str);
 void                        context_termncurses_refresh       (struct context* self, void* window);
 int                         context_termncurses_getch_block   (struct context* self, void* window);
 int                         context_termncurses_getch_noblock (struct context* self, void* window);

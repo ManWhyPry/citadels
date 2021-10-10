@@ -12,16 +12,18 @@ struct context_termncurses* context_termncurses_new(void) {
     context->super.destroy       = &context_termncurses_destroy;
     context->super.erase         = &context_termncurses_erase;
     context->super.setchar       = &context_termncurses_setchar;
+    context->super.print         = &context_termncurses_print;
     context->super.refresh       = &context_termncurses_refresh;
     context->super.getch_block   = &context_termncurses_getch_block;
     context->super.getch_noblock = &context_termncurses_getch_noblock;
-    context->super.free                 = &context_termncurses_free;
+    context->super.free          = &context_termncurses_free;
 
     initscr();
     cbreak();
     noecho();
     intrflush(stdscr, FALSE);
     keypad(stdscr, TRUE);
+    curs_set(0);
 
     return context;
 }
@@ -43,6 +45,10 @@ void context_termncurses_erase(struct context* _self, void* window) {
 
 void context_termncurses_setchar(struct context* _self, void* window, int x, int y, char ch) {
     mvwaddch(window, y, x, ch);
+}
+
+void context_termncurses_print(struct context* _self, void* window, int x, int y, char* str) {
+    mvwaddstr(window, y, x, str);
 }
 
 void context_termncurses_refresh(struct context* _self, void* window) {
