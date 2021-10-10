@@ -10,7 +10,7 @@ struct context {
     void  (*refresh)       (struct context* self, void* window);
     int   (*getch_block)   (struct context* self, void* window);
     int   (*getch_noblock) (struct context* self, void* window);
-    void  (*free)                 (struct context* self);
+    void  (*free)          (struct context* self);
 };
 
 #endif//CITADELS_CONTEXT_H_
