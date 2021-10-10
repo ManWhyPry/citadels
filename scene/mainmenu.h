@@ -7,6 +7,7 @@ struct scene_mainmenu {
     struct scene    super;
     struct context* context;
     void*           window;
+    int             selected;
 };
 
 struct scene_mainmenu* scene_mainmenu_new          (struct context* context);

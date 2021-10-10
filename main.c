@@ -13,6 +13,7 @@ int main(void) {
         scene->handle_input(scene);
         scene = scene->update(scene);
     }
-
+    
+    context->free(context);
     return 0;
 }
