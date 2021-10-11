@@ -43,10 +43,10 @@ struct scene* scene_mainmenu_update(struct scene* _self) {
             return (struct scene*)scene_message_new(_self, self->context, "Not implemented");
         case 2:
             self->selected = 0;
-            return (struct scene*)scene_message_new(_self, self->context, "Not implemented");
+            return (struct scene*)scene_message_new(_self, self->context, "CITADELS - Roguelike RPG");
         case 3:
-        _self->free(_self);
-            return NULL;
+            _self->free(_self);
+            return (struct scene*)scene_message_new(NULL, self->context, "Bye");
     }
     return _self;
 }
